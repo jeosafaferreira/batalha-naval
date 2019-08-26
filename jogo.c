@@ -212,7 +212,15 @@ int main(void) {
     }
       printf("\n    -----------------------------------------\n");
   }
-  return 0;
+
+  printf("\nExibi os tabuleiros apenas pra debug.\n");
+  int r;
+  while(r != 1){
+    printf("Deseja começar a jogar? \n1.SIM\n2.NÃO\n\nSUA RESPOSTA: ");
+    scanf("%d", &r);
+  }
+  //limpa a tela
+  system("cls");
 
   int col_usu;
   int lin_usu;
@@ -220,4 +228,6 @@ int main(void) {
   scanf("%d", &lin_usu);
   printf("informe uma coluna: ");
   scanf("%d", &col_usu);
+  
+  return 0;
 }
