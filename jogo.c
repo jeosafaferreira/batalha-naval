@@ -18,64 +18,98 @@ int main(void) {
 
   //ESCONDENDO OS PRECIOSOS
   srand(time(NULL));
-  //barco 1: (Tipo T)
+  //BARCO 1: (Tipo T)
   int lin_ini = 2 + rand() % 7;
   int col_ini = 2 + rand() % 7;
   printf("linha %d; coluna %d.\n\n", lin_ini, col_ini);
-  T1[lin_ini][col_ini] = '1';
-  T1[lin_ini+1][col_ini] = '1';
-  T1[lin_ini+2][col_ini] = '1';
-  T1[lin_ini][col_ini-1] = '1';
-  T1[lin_ini][col_ini+1] = '1';
+  T1[lin_ini][col_ini] = 'A';
+  T1[lin_ini+1][col_ini] = 'A';
+  T1[lin_ini+2][col_ini] = 'A';
+  T1[lin_ini][col_ini-1] = 'A';
+  T1[lin_ini][col_ini+1] = 'A';
 
-  //barco 2:
+  //BARCO 2:
   lin_ini = 1 + rand() % 9;
   col_ini = 1 + rand() % 9;
+  //VERIFICA SE JÁ TEM BARCO NO LOCAL
+  while(T1[lin_ini][col_ini] != ' ' || T1[lin_ini+1][col_ini] != ' ' || T1[lin_ini+2][col_ini] != ' ' || T1[lin_ini+3][col_ini] != ' '){
+    lin_ini = 1 + rand() % 9;
+    col_ini = 1 + rand() % 9;
+  }
   printf("linha %d; coluna %d.\n\n", lin_ini, col_ini);
-  T1[lin_ini+1][col_ini] = '2';
-  T1[lin_ini+2][col_ini] = '2';
-  T1[lin_ini+3][col_ini] = '2';
-  T1[lin_ini+4][col_ini] = '2';
+  T1[lin_ini][col_ini] = 'B';
+  T1[lin_ini+1][col_ini] = 'B';
+  T1[lin_ini+2][col_ini] = 'B';
+  T1[lin_ini+3][col_ini] = 'B';
 
-  //barco 3:
+  //BARCO 3:
   lin_ini = 1 + rand() % 9;
   col_ini = 1 + rand() % 9;
+  //verificando
+  while(T1[lin_ini][col_ini] != ' ' || T1[lin_ini+1][col_ini] != ' ' || T1[lin_ini+2][col_ini] != ' '){
+    lin_ini = 1 + rand() % 9;
+    col_ini = 1 + rand() % 9;
+  }
   printf("linha %d; coluna %d.\n\n", lin_ini, col_ini);
-  T1[lin_ini+1][col_ini] = '3';
-  T1[lin_ini+2][col_ini] = '3';
-  T1[lin_ini+3][col_ini] = '3';
+  T1[lin_ini][col_ini] = 'C';
+  T1[lin_ini+1][col_ini] = 'C';
+  T1[lin_ini+2][col_ini] = 'C';
 
-  //barco 4:
+  //BARCO 4:
   lin_ini = 1 + rand() % 9;
   col_ini = 1 + rand() % 9;
+  //verificando
+  while(T1[lin_ini][col_ini] != ' ' || T1[lin_ini+1][col_ini] != ' '){
+    lin_ini = 1 + rand() % 9;
+    col_ini = 1 + rand() % 9;
+  }
   printf("linha %d; coluna %d.\n\n", lin_ini, col_ini);
-  T1[lin_ini+1][col_ini] = '4';
-  T1[lin_ini+2][col_ini] = '4';
+  T1[lin_ini][col_ini] = 'D';
+  T1[lin_ini+1][col_ini] = 'D';
     
-  //barco 5:
+  //BARCO 5:
   lin_ini = 1 + rand() % 9;
   col_ini = 1 + rand() % 9;
+  //verificando
+  while(T1[lin_ini][col_ini] != ' ' || T1[lin_ini+1][col_ini] != ' '){
+    lin_ini = 1 + rand() % 9;
+    col_ini = 1 + rand() % 9;
+  }
   printf("linha %d; coluna %d.\n\n", lin_ini, col_ini);
-  T1[lin_ini+1][col_ini] = '5';
-  T1[lin_ini+2][col_ini] = '5';
+  T1[lin_ini][col_ini] = 'E';
+  T1[lin_ini+1][col_ini] = 'E';
 
-  //barco 6:
+  //BARCO 6:
   lin_ini = 1 + rand() % 9;
   col_ini = 1 + rand() % 9;
+  while(T1[lin_ini][col_ini] != ' '){
+    lin_ini = 1 + rand() % 9;
+    col_ini = 1 + rand() % 9;
+  }
   printf("linha %d; coluna %d.\n\n", lin_ini, col_ini);
-  T1[lin_ini+1][col_ini] = '6';
+  T1[lin_ini][col_ini] = 'F';
   
-  //barco 7:
+  //BARCO 7:
   lin_ini = 1 + rand() % 9;
   col_ini = 1 + rand() % 9;
+  //verificando
+  while(T1[lin_ini][col_ini] != ' '){
+    lin_ini = 1 + rand() % 9;
+    col_ini = 1 + rand() % 9;
+  }
   printf("linha %d; coluna %d.\n\n", lin_ini, col_ini);
-  T1[lin_ini+1][col_ini] = '7';
+  T1[lin_ini][col_ini] = 'G';
 
-  //barco 8:
+  //BARCO 8:
   lin_ini = 1 + rand() % 9;
   col_ini = 1 + rand() % 9;
+  //verificando
+  while(T1[lin_ini][col_ini] != ' '){
+    lin_ini = 1 + rand() % 9;
+    col_ini = 1 + rand() % 9;
+  }
   printf("linha %d; coluna %d.\n\n", lin_ini, col_ini);
-  T1[lin_ini+1][col_ini] = '8';
+  T1[lin_ini][col_ini] = 'H';
   
   //exibindo tabuleiro 1
   printf("      A   B   C   D   E   F   G   H   I   J\n");
