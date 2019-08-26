@@ -4,6 +4,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <string.h>
+
 int main(void) {
 
   char T1[10][10];
@@ -230,8 +232,8 @@ int main(void) {
   int lin_usu;
   int jogador = 2;
   while (1){
-    if(jogador == 2){
-      jogador = 1;
+    if(jogador == 1){
+      jogador = 2;
       //exibindo tabuleiro 2(inimigo)
       printf("      A   B   C   D   E   F   G   H   I   J\n");
       printf("    -----------------------------------------\n");
@@ -243,6 +245,7 @@ int main(void) {
         printf("\n    -----------------------------------------\n");
       }
     }else{
+      jogador = 1;
       printf("      A   B   C   D   E   F   G   H   I   J\n");
       printf("    -----------------------------------------\n");
       for(int lin=1; lin<11;lin++){
@@ -259,6 +262,28 @@ int main(void) {
     scanf("%d", &lin_usu);
     printf("informe uma coluna: ");
     scanf("%d", &col_usu);
+    //verifica se tem algo
+    if(jogador == 1){
+      if(T2[lin_usu][col_usu] != ' '){
+        if(T2[lin_usu][col_usu] =='F' || T2[lin_usu][col_usu] =='G' || T2[lin_usu][col_usu] =='H'){
+          T2_descoberto[lin_usu][col_usu] = 'X';
+        }else{
+          T2_descoberto[lin_usu][col_usu] = 'P';
+        }
+      }else{
+        T2_descoberto[lin_usu][col_usu] = 'A';
+      }
+    }else{
+      if(T1[lin_usu][col_usu] != ' '){
+        if(T1[lin_usu][col_usu] =='F' || T1[lin_usu][col_usu] =='G' || T1[lin_usu][col_usu] =='H'){
+          T1_descoberto[lin_usu][col_usu] = 'X';
+        }else{
+          T1_descoberto[lin_usu][col_usu] = 'P';
+        }
+      }else{
+        T1_descoberto[lin_usu][col_usu] = 'A';
+      }
+    }
   }
   return 0;
 }
