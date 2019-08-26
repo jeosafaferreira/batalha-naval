@@ -230,22 +230,9 @@ int main(void) {
   
   int col_usu;
   int lin_usu;
-  int jogador = 2;
+  int jogador = 1;
   while (1){
     if(jogador == 1){
-      jogador = 2;
-      //exibindo tabuleiro 2(inimigo)
-      printf("      A   B   C   D   E   F   G   H   I   J\n");
-      printf("    -----------------------------------------\n");
-      for(int lin=1; lin<11;lin++){
-        printf(" %2d |",lin);
-        for(int col=1; col<11;col++){
-          printf(" %c |", T1_descoberto[lin][col]);
-        }
-        printf("\n    -----------------------------------------\n");
-      }
-    }else{
-      jogador = 1;
       printf("      A   B   C   D   E   F   G   H   I   J\n");
       printf("    -----------------------------------------\n");
       for(int lin=1; lin<11;lin++){
@@ -255,33 +242,118 @@ int main(void) {
         }
         printf("\n    -----------------------------------------\n");
       }
+    }else{
+      printf("      A   B   C   D   E   F   G   H   I   J\n");
+      printf("    -----------------------------------------\n");
+      for(int lin=1; lin<11;lin++){
+        printf(" %2d |",lin);
+        for(int col=1; col<11;col++){
+          printf(" %c |", T1_descoberto[lin][col]);
+        }
+        printf("\n    -----------------------------------------\n");
+      }
     }
 
     printf("JOGADOR %d:\n", jogador);
     printf("Informe uma linha: ");
-    scanf("%d", &lin_usu);
+    scanf(" %d", &lin_usu);
     printf("informe uma coluna: ");
-    scanf("%d", &col_usu);
+    char col;
+    scanf(" %c", &col);
+    
+    switch(col){
+      //maiúsculas
+       case 'A':
+        col_usu = 1;
+        break;
+      case 'B':
+        col_usu = 2;
+        break;
+      case 'C':
+        col_usu = 3;
+        break;
+      case 'D':
+        col_usu = 4;
+        break;
+      case 'E':
+        col_usu = 5;
+        break;
+      case 'F':
+        col_usu = 6;
+        break;
+      case 'G':
+        col_usu = 7;
+        break;
+      case 'H':
+        col_usu = 8;
+        break;
+      case 'I':
+        col_usu = 9;
+        break;
+      case 'J':
+        col_usu = 10;
+        break;
+      
+      //minúsculas
+      case 'a':
+        col_usu = 1;
+        break;
+      case 'b':
+        col_usu = 2;
+        break;
+      case 'c':
+        col_usu = 3;
+        break;
+      case 'd':
+        col_usu = 4;
+        break;
+      case 'e':
+        col_usu = 5;
+        break;
+      case 'f':
+        col_usu = 6;
+        break;
+      case 'g':
+        col_usu = 7;
+        break;
+      case 'h':
+        col_usu = 8;
+        break;
+      case 'i':
+        col_usu = 9;
+        break;
+      case 'j':
+        col_usu = 10;
+        break;
+    }
     //verifica se tem algo
     if(jogador == 1){
-      if(T2[lin_usu][col_usu] != ' '){
+      jogador=2;
+      if(T2[lin_usu][col_usu] == ' '){
+        T2_descoberto[lin_usu][col_usu] = 'A';
+        printf("Acertou água.\n\n");
+      }else{
         if(T2[lin_usu][col_usu] =='F' || T2[lin_usu][col_usu] =='G' || T2[lin_usu][col_usu] =='H'){
           T2_descoberto[lin_usu][col_usu] = 'X';
+          printf("\nDestruiu completamente uma embarcação.\n\n");
         }else{
           T2_descoberto[lin_usu][col_usu] = 'P';
+          printf("\nDestruiu parcialmente uma embarcação.\n\n");
         }
-      }else{
-        T2_descoberto[lin_usu][col_usu] = 'A';
       }
     }else{
-      if(T1[lin_usu][col_usu] != ' '){
+      jogador=1;
+      if(T1[lin_usu][col_usu] == ' '){
+        T1_descoberto[lin_usu][col_usu] = 'A';
+        printf("Acertou água.\n\n");
+      }else{
         if(T1[lin_usu][col_usu] =='F' || T1[lin_usu][col_usu] =='G' || T1[lin_usu][col_usu] =='H'){
           T1_descoberto[lin_usu][col_usu] = 'X';
+          printf("Destruiu completamente uma embarcação.\n\n");
         }else{
           T1_descoberto[lin_usu][col_usu] = 'P';
+          printf("Destruiu parcialmente uma embarcação.\n\n");
         }
-      }else{
-        T1_descoberto[lin_usu][col_usu] = 'A';
       }
     }
   }
