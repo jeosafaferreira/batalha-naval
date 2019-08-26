@@ -22,21 +22,61 @@ int main(void) {
   int lin_ini = 2 + rand() % 7;
   int col_ini = 2 + rand() % 7;
   printf("linha %d; coluna %d.\n\n", lin_ini, col_ini);
-  T1[lin_ini][col_ini] = '#';
-  T1[lin_ini+1][col_ini] = '#';
-  T1[lin_ini+2][col_ini] = '#';
-  T1[lin_ini][col_ini-1] = '#';
-  T1[lin_ini][col_ini+1] = '#';
+  T1[lin_ini][col_ini] = '1';
+  T1[lin_ini+1][col_ini] = '1';
+  T1[lin_ini+2][col_ini] = '1';
+  T1[lin_ini][col_ini-1] = '1';
+  T1[lin_ini][col_ini+1] = '1';
 
   //barco 2:
   lin_ini = 1 + rand() % 9;
   col_ini = 1 + rand() % 9;
   printf("linha %d; coluna %d.\n\n", lin_ini, col_ini);
-  T1[lin_ini+1][col_ini] = '#';
-  T1[lin_ini+2][col_ini] = '#';
-  T1[lin_ini+3][col_ini] = '#';
-  T1[lin_ini+4][col_ini] = '#';
+  T1[lin_ini+1][col_ini] = '2';
+  T1[lin_ini+2][col_ini] = '2';
+  T1[lin_ini+3][col_ini] = '2';
+  T1[lin_ini+4][col_ini] = '2';
 
+  //barco 3:
+  lin_ini = 1 + rand() % 9;
+  col_ini = 1 + rand() % 9;
+  printf("linha %d; coluna %d.\n\n", lin_ini, col_ini);
+  T1[lin_ini+1][col_ini] = '3';
+  T1[lin_ini+2][col_ini] = '3';
+  T1[lin_ini+3][col_ini] = '3';
+
+  //barco 4:
+  lin_ini = 1 + rand() % 9;
+  col_ini = 1 + rand() % 9;
+  printf("linha %d; coluna %d.\n\n", lin_ini, col_ini);
+  T1[lin_ini+1][col_ini] = '4';
+  T1[lin_ini+2][col_ini] = '4';
+    
+  //barco 5:
+  lin_ini = 1 + rand() % 9;
+  col_ini = 1 + rand() % 9;
+  printf("linha %d; coluna %d.\n\n", lin_ini, col_ini);
+  T1[lin_ini+1][col_ini] = '5';
+  T1[lin_ini+2][col_ini] = '5';
+
+  //barco 6:
+  lin_ini = 1 + rand() % 9;
+  col_ini = 1 + rand() % 9;
+  printf("linha %d; coluna %d.\n\n", lin_ini, col_ini);
+  T1[lin_ini+1][col_ini] = '6';
+  
+  //barco 7:
+  lin_ini = 1 + rand() % 9;
+  col_ini = 1 + rand() % 9;
+  printf("linha %d; coluna %d.\n\n", lin_ini, col_ini);
+  T1[lin_ini+1][col_ini] = '7';
+
+  //barco 8:
+  lin_ini = 1 + rand() % 9;
+  col_ini = 1 + rand() % 9;
+  printf("linha %d; coluna %d.\n\n", lin_ini, col_ini);
+  T1[lin_ini+1][col_ini] = '8';
+  
   //exibindo tabuleiro 1
   printf("      A   B   C   D   E   F   G   H   I   J\n");
   printf("    -----------------------------------------\n");
