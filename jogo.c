@@ -8,12 +8,16 @@ int main(void) {
 
   char T1[10][10];
   char T2[10][10];
+  char T1_descoberto[10][10];
+  char T2_descoberto[10][10];
 
   //populando matrizes
   for(int lin=1; lin<11; lin++){
     for(int col=1; col<11; col++){
       T1[lin][col] = ' ';
       T2[lin][col] = ' ';
+      T1_descoberto[lin][col] = ' ';
+      T2_descoberto[lin][col] = ' ';
     }
   }
 
@@ -221,13 +225,40 @@ int main(void) {
   }
   //limpa a tela
   system("cls");
-
+  
   int col_usu;
   int lin_usu;
-  printf("informe uma linha: ");
-  scanf("%d", &lin_usu);
-  printf("informe uma coluna: ");
-  scanf("%d", &col_usu);
-  
+  int jogador = 2;
+  while (1){
+    if(jogador == 2){
+      jogador = 1;
+      //exibindo tabuleiro 2(inimigo)
+      printf("      A   B   C   D   E   F   G   H   I   J\n");
+      printf("    -----------------------------------------\n");
+      for(int lin=1; lin<11;lin++){
+        printf(" %2d |",lin);
+        for(int col=1; col<11;col++){
+          printf(" %c |", T1_descoberto[lin][col]);
+        }
+        printf("\n    -----------------------------------------\n");
+      }
+    }else{
+      printf("      A   B   C   D   E   F   G   H   I   J\n");
+      printf("    -----------------------------------------\n");
+      for(int lin=1; lin<11;lin++){
+        printf(" %2d |",lin);
+        for(int col=1; col<11;col++){
+          printf(" %c |", T2_descoberto[lin][col]);
+        }
+        printf("\n    -----------------------------------------\n");
+      }
+    }
+
+    printf("JOGADOR %d:\n", jogador);
+    printf("Informe uma linha: ");
+    scanf("%d", &lin_usu);
+    printf("informe uma coluna: ");
+    scanf("%d", &col_usu);
+  }
   return 0;
 }
