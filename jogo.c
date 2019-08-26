@@ -28,6 +28,15 @@ int main(void) {
   T1[lin_ini][col_ini-1] = '#';
   T1[lin_ini][col_ini+1] = '#';
 
+  //barco 2:
+  lin_ini = 1 + rand() % 9;
+  col_ini = 1 + rand() % 9;
+  printf("linha %d; coluna %d.\n\n", lin_ini, col_ini);
+  T1[lin_ini+1][col_ini] = '#';
+  T1[lin_ini+2][col_ini] = '#';
+  T1[lin_ini+3][col_ini] = '#';
+  T1[lin_ini+4][col_ini] = '#';
+
   //exibindo tabuleiro 1
   printf("      A   B   C   D   E   F   G   H   I   J\n");
   printf("    -----------------------------------------\n");
